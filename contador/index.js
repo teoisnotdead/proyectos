@@ -15,6 +15,6 @@ btnReset.onclick = function increase() {
 }
 
 btnIncrease.onclick = function reset() {
-    valorCounter +=1;
+    valorCounter += 1;
     counter.innerHTML = valorCounter;
 }
