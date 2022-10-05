@@ -9,11 +9,13 @@
 // Consumo la pokeapi con los primeros 151 pokemon y despues le hago un map al results y llamo a la funcion pokemon data
 // para asi por cada pokemon que salga consulte por sus datos
 function pokemonKantoList() {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=6')
         .then(response => response.json())
         .then((allpokemon) => {
             allpokemon.results.map((pokemon) => {
                 pokemonData(pokemon);
+                document.getElementById('pokemonName').innerHTML = pokemon.name;
+
                 console.log(pokemon);
             })
         })
@@ -25,8 +27,8 @@ function pokemonData(pokemon) {
     let url = pokemon.url
     fetch(url)
         .then(response => response.json())
-        .then((pokeData) => {
-            console.log(pokeData)
+        .then((poke) => {
+                console.log(poke);
         })
 }
 
